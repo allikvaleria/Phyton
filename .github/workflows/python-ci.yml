@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on: [push]
+jobs:
+  build:
+    runs-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Pythonni Installimine
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Paigaldada soltuvusid
+        run: pip install pytest
+
+      - name: käivitada testid
+        run: pytest
+        
